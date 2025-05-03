@@ -1,0 +1,22 @@
+// @include mixins.font-size(16);
+@mixin font-size($size, $base: 16) {
+  $rem: calc($size / $base);
+  font-size: #{$size}px;
+  font-size: #{$rem}rem;
+}
+
+// @include mixins.font-weight(bold);
+@mixin font-weight($weight) {
+  $weight: (
+    normal: 400,
+    bold: 700,
+    bolder: 900
+  );
+}
+
+// title
+@mixin title-normal {
+  @include font-size(16);
+  @include font-weight(bold);
+  line-height: 1.5;
+}

@@ -1,0 +1,55 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.Reference {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include mixins.title-normal;
+
+    @media (hover: hover) {
+      &:hover {
+        color: #ff0000;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__textPrimary {
+    @include mixins.font-size(18);
+    @include mixins.font-weight(bold);
+
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+  }
+
+  &__textSecondary {
+    @include mixins.font-size(23);
+
+    color: var(--color-text-secondary);
+    background-color: var(--color-background-secondary);
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    // pointer-events: none;
+  }
+
+  &--fontSize12 {
+    @include mixins.font-size(12);
+  }
+
+  &--fontSize14 {
+    @include mixins.font-size(14);
+  }
+
+  &--fontSize28 {
+    @include mixins.font-size(28);
+  }
+
+  // ▼ 仮で設定 ▼
+  h1, div, p {
+    margin: 10px 0;
+  }
+}
