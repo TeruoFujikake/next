@@ -1,0 +1,10 @@
+:root {
+  --color-text-primary: #000000;
+  --color-text-secondary: #fff000;
+
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #0004ff;
+}
+
+// Next.js + CSS Modules では、.module.scss ファイル内では ローカルスコープのみ使用可です。
+// body のようなグローバルセレクタは、通常の .scss ファイルか globals.scss に記述すべきです。

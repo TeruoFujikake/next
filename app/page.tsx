@@ -1,3 +1,4 @@
+import "./globals_variables.scss";
 import Reference from './components/Reference/Reference';
 
 export default function Home() {
