@@ -1,0 +1,26 @@
+.LiMore {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid var(--color-border-primary);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    &Item {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--noMore {
+      margin-bottom: 0;
+    }
+  }
+
+}
