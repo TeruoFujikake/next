@@ -1,0 +1,20 @@
+@use "../../styles/mixins";
+
+.BusinessHoursStatus {
+  &--open {
+    color: var(--color-text-business-hours-open);
+  }
+  &--close {
+    color: var(--color-text-business-hours-close);
+  }
+
+  &--fontSize12 {
+    @include mixins.font-size(12);
+  }
+  &--fontSize14 {
+    @include mixins.font-size(14);
+  }
+  &--fontSize20 {
+    @include mixins.font-size(20);
+  }
+}

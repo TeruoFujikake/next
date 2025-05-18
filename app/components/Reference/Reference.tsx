@@ -1,5 +1,6 @@
 import ClassNames from 'classnames';
 import Link from 'next/link'; // Link=<a>タグになる / Next.jsのLinkコンポーネント
+import BusinessHoursStatus, { BusinessHoursStatusCode } from '../BusinessHoursStatus/BusinessHoursStatus';
 import styles from './Reference.module.scss';
 
 interface ReferenceProps {
@@ -13,6 +14,8 @@ interface ReferenceProps {
   onClickHandler?: () => void; // このように書くと、onClickHandlerがundefinedの時にエラーになるので、?をつけてオプショナルにする
   /* disabledかどうか */
   isDisabled?: boolean;
+  businessHoursStatusCode: BusinessHoursStatusCode;
+  businessHoursStatusText: string;
 }
 
 const Reference: React.FC<ReferenceProps> = ({
@@ -23,6 +26,8 @@ const Reference: React.FC<ReferenceProps> = ({
   target = '_blank',
   onClickHandler,
   isDisabled = false,
+  businessHoursStatusCode,
+  businessHoursStatusText
   }) => {
   const classNames = ClassNames({
     [styles.Reference]: true,
@@ -48,6 +53,12 @@ const Reference: React.FC<ReferenceProps> = ({
         <div className={styles.Reference__textPrimary}>mixinsとvariables.scssで設定 | primary：{text}</div>
         <div className={styles.Reference__textSecondary}>mixinsとvariables.scssで設定 | secondary：{text}</div>
         <p className={classNamesFontSize}>module.scssで設定：{text}</p>
+
+        <BusinessHoursStatus
+          statusCode={businessHoursStatusCode}
+          statusText={businessHoursStatusText}
+          fontSize={20}
+        />
       </WrapperTag>
     </>
   );

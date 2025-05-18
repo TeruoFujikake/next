@@ -9,12 +9,16 @@ interface LiMoreProps {
 const LiMore: React.FC<LiMoreProps> = ({ listData, totalCount }) => {
   const classNames = ClassNames({
     [styles.LiMore]: true,
+  });
+
+  const classNamesList = ClassNames({
+    [styles.LiMore__list]: true,
     [styles['LiMore__list--noMore']]: totalCount <= 3,
   });
   return (
     <>
       <div className={classNames}>
-        <ul className={styles.LiMore__list}>
+        <ul className={classNamesList}>
           {listData.slice(0, 3).map((list, index) => (
             <li key={index} className={styles.LiMore__listItem}>
               {list}
@@ -22,7 +26,7 @@ const LiMore: React.FC<LiMoreProps> = ({ listData, totalCount }) => {
           ))}
         </ul>
         {totalCount > 3 && 
-          <p className={styles.LiMore__total}>その他{totalCount - 3}件あり</p>
+          <p className={styles.LiMore__total}>その他{totalCount - 3}件あり。<br/>件数が3以下だったらここは消える</p>
         }
       </div>
     </>

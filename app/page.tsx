@@ -16,6 +16,8 @@ export default function Home() {
         target="_blank"
         // onClickHandler={() => {}}
         isDisabled={true}
+        businessHoursStatusCode={1}
+        businessHoursStatusText="営業中ですよー"
       />
       <UlLiData
         liData={TEXT.ULLI_DATA.LI_DATA._01}
