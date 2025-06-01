@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   webpack(config) {
     // 既存の svg ローダーを無効化
-    const fileLoaderRule = config.module.rules.find((rule) =>
+    const fileLoaderRule = config.module.rules.find((rule: any) =>
       rule.test && rule.test.test && rule.test.test('.svg')
     );
     if (fileLoaderRule) {
