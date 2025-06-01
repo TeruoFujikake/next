@@ -35,20 +35,42 @@
     // pointer-events: none;
   }
 
-  &--fontSize12 {
-    @include mixins.font-size(12);
-  }
-
   &--fontSize14 {
     @include mixins.font-size(14);
+  }
+
+  &--fontSize18 {
+    @include mixins.font-size(18);
   }
 
   &--fontSize28 {
     @include mixins.font-size(28);
   }
 
+  & > [class^="undefined BusinessHoursStatus"] {
+    background-color: #fff000;
+  }
+
+  & > div {
+    &:not(:first-of-type) {
+      margin-top: 16px;
+    } 
+  }
+
   // ▼ 仮で設定 ▼
   h1, div, p {
     margin: 10px 0;
   }
+  // ▲ 仮で設定 ▲
+
+  @each $i in (1, 2, 3, 4, 5) {
+    &__boxShadow#{$i} {
+      @include mixins.box-shadow($i);
+
+      display: flex;
+      margin: 10px auto 20px;
+      padding: 10px;
+    }
+  }
+
 }

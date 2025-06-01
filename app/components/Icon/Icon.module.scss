@@ -1,0 +1,56 @@
+.Icon {
+  display: inline-block;
+
+  &--size14 {
+    width: 14px;
+    height: 14px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &--size16 {
+    width: 16px;
+    height: 16px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--size18 {
+    width: 18px;
+    height: 18px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &--colorDefault {
+    svg {
+      use {
+        fill: #000;
+      }
+    }
+  }
+  &--colorPrimary {
+    svg {
+      use {
+        fill: #000;
+      }
+    }
+  }
+  &--colorSecondary {
+    svg {
+      use {
+        fill: #929292;
+      }
+    }
+  }
+
+}

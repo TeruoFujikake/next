@@ -1,16 +1,17 @@
-import "./globals_variables.scss";
-import Reference from './components/Reference/Reference';
-import AllCodeView from './components/AllCodeView/AllCodeView';
-import UlLiData from './components/UlLiData/UlLiData';
-import LiMore from './components/LiMore/LiMore';
+import "../app/globals_variables.scss";
+import Reference from '../app/components/Reference/Reference';
+import UlLiData from '../app/components/UlLiData/UlLiData';
+import LiMore from '../app/components/LiMore/LiMore';
+import Button from '../app/components/Button/Button';
+import AllCodeView from '../app/components/AllCodeView/AllCodeView';
 
-import { TEXT, ARRAY } from './pageCommonData';
+import { TEXT, ARRAY, URL } from '../app/pageCommonData';
 
 export default function Home() {
   return (
     <>
       <Reference
-        fontSize={28}
+        fontSize={18}
         text="テキスト"
         href="https://test.com"
         target="_blank"
@@ -26,6 +27,13 @@ export default function Home() {
       <LiMore
         listData={ARRAY.LIST.TEXT._01}
         totalCount={5}
+      />
+      <Button
+        text="ボタン"
+        height={50}
+        onClickHandler={() => (window.location.href = URL.EXAMPLE)}
+        target="_blank"
+        iconLeft="heart"
       />
       <AllCodeView
         fontSize={20}

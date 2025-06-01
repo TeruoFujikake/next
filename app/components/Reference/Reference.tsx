@@ -4,7 +4,7 @@ import BusinessHoursStatus, { BusinessHoursStatusCode } from '../BusinessHoursSt
 import styles from './Reference.module.scss';
 
 interface ReferenceProps {
-  fontSize?: 12 | 14 | 28;
+  fontSize?: 14 | 18 | 28;
   text: string;
   /* リンク先のURL */
   href?: string;
@@ -19,8 +19,8 @@ interface ReferenceProps {
 }
 
 const Reference: React.FC<ReferenceProps> = ({
-  /* fontSizeは指定しないと14pxになる */
-  fontSize = 14,
+  /* fontSizeは指定しないと18pxになる */
+  fontSize = 18,
   text,
   href,
   target = '_blank',
@@ -59,6 +59,11 @@ const Reference: React.FC<ReferenceProps> = ({
           statusText={businessHoursStatusText}
           fontSize={20}
         />
+
+        <p className={classNamesFontSize}>共通化が望ましい場合：component化<br />違う場合：モジュール化 moulde</p>
+
+        <span className={styles.Reference__boxShadow2}>boxShadow2（@each $i in (1, 2, 3, 4, 5)使用）</span>
+        <span className={styles.Reference__boxShadow5}>boxShadow5（@each $i in (1, 2, 3, 4, 5)使用）</span>
       </WrapperTag>
     </>
   );

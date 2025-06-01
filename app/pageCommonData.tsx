@@ -36,3 +36,7 @@ export const ARRAY = {
     }
   }
 }
+
+export const URL = {
+  EXAMPLE: 'https://example.com',
+}

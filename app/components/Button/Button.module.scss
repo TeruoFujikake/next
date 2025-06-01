@@ -1,0 +1,39 @@
+.Button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: 16px;
+  background-color: #cff594;
+
+  &--height30 {
+    height: 30px;
+    padding: 0 12px;
+  }
+
+  &--height40 {
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  &--height50 {
+    height: 50px;
+    padding: 0 12px;
+  }
+  
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__icon {
+    &--left {
+      margin-right: 8px;
+    }
+
+    &--right {
+      margin-left: 8px;
+    }
+  }
+}
