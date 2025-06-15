@@ -1,0 +1,24 @@
+@use "../../styles/mixins";
+
+.UseEffectUseRef {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+
+  & p {
+    margin: 0;
+  }
+
+  &__title {
+    @include mixins.title-normal;
+  }
+
+  &__date {
+    @include mixins.font-size(18);
+  }
+}

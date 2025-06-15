@@ -3,6 +3,8 @@ import Reference from '../app/components/Reference/Reference';
 import UlLiData from '../app/components/UlLiData/UlLiData';
 import LiMore from '../app/components/LiMore/LiMore';
 import Button from '../app/components/Button/Button';
+import UseEffectUseRef from '../app/components/UseEffectUseRef/UseEffectUseRef';
+import { DEVICE } from '../app/components/device';
 import AllCodeView from '../app/components/AllCodeView/AllCodeView';
 
 import { TEXT, ARRAY, URL } from '../app/pageCommonData';
@@ -34,6 +36,16 @@ export default function Home() {
         onClickHandler={() => (window.location.href = URL.EXAMPLE)}
         target="_blank"
         iconLeft="heart"
+      />
+      <UseEffectUseRef
+        id={1}
+        title="UseEffectUseRefのタイトル"
+        shouldShowOverview={true}
+        discription="useEffectとuseRefを使用して特定の要素にスクロールする機能を持つ"
+        registerDate="2025-06-08"
+        updateDate="2025-06-30"
+        device={DEVICE.PC}
+        name="UseEffectUseRefExample"
       />
       <AllCodeView
         fontSize={20}

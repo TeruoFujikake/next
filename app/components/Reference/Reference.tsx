@@ -60,7 +60,8 @@ const Reference: React.FC<ReferenceProps> = ({
           fontSize={20}
         />
 
-        <p className={classNamesFontSize}>共通化が望ましい場合：component化<br />違う場合：モジュール化 moulde</p>
+        <p className={classNamesFontSize}>共通化が望ましい場合：component化<br />
+        違う場合：モジュール化 moulde<br />モジュールで共通化はできない</p>
 
         <span className={styles.Reference__boxShadow2}>boxShadow2（@each $i in (1, 2, 3, 4, 5)使用）</span>
         <span className={styles.Reference__boxShadow5}>boxShadow5（@each $i in (1, 2, 3, 4, 5)使用）</span>

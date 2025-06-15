@@ -16,7 +16,7 @@
 
 // title
 @mixin title-normal {
-  @include font-size(16);
+  @include font-size(20);
   @include font-weight(bold);
   line-height: 1.5;
 }
