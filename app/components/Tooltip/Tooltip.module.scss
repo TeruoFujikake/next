@@ -1,0 +1,173 @@
+@use "../../styles/mixins";
+
+.Tooltip {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  // visibility: hidden;
+
+  &--visible {
+    visibility: visible;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 250px;
+    padding: 12px;
+    pointer-events: auto;
+    background-color: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    &Text {
+      flex: 1;
+      margin: 0;
+    }
+
+    &Close {
+      display: flex;
+      margin-left: 8px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 2;
+
+    &::after {
+      position: absolute;
+      content: "";
+    }
+  }
+
+  &--topTip {
+    transform: translateY(100%);
+
+    & > .Tooltip__body {
+      &--alignLeft {
+        margin: 8px auto 0 16px;
+      }
+
+      &--alignRight {
+        margin: 8px 16px 0 auto;
+      }
+    }
+
+    & > .Tooltip__arrow {
+      top: 1px; // 下にめり込ませる
+      border-right: 7px solid transparent;
+      border-left: 7px solid transparent;
+      border-bottom: 8px solid var(--color-border-primary);
+      transform: translateX(-50%);
+
+      &::after {
+        top: 1px;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        border-bottom: 7px solid var(--color-backgroud-primary);
+      }
+    }
+  }
+
+  &--rightTip {
+    top: 50%;
+    transform: translateY(-50%);
+
+    & > .Tooltip__body {
+      margin: 0 8px 0 auto;
+    }
+
+    & > .Tooltip__arrow {
+      top: 50%;
+      right: 1px; // 左にめり込ませる
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 8px solid var(--color-border-primary);
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: 50%;
+      right: 1px;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 7px solid var(--color-background-primary);
+      transform: translateY(-50%);
+    }
+  }
+
+  &--bottomTip {
+    transform: translateY(-100%);
+
+    &> .Tooltip__body {
+      &--alignLeft {
+        margin: 0 auto 8px 16px;
+      }
+
+      &--alignRight {
+        margin: 0 16px 8px auto;
+      }
+    }
+
+    & > .Tooltip__arrow {
+      bottom: 1px; // 上にめり込ませる
+      left: 50%;
+      border-top: 8px solid var(--color-border-primary);
+      border-right: 7px solid transparent;
+      border-left: 7px solid transparent;
+      transform: translateX(-50%);
+
+      &::after {
+        top: -8px;
+        left: 50%;
+        border-top: 7px solid var(--color-background-primary);
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &--leftTip {
+    top: 50%;
+    transform: translateY(-50%);
+
+    & > .Tooltip__body {
+      margin: 0 auto 0 8px;
+    }
+
+    & > .Tooltip__arrow {
+      top: 50%;
+      left: 1px; // 右にめり込ませる
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-right: 8px solid var(--color-border-primary);
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      top: 50%;
+      left: 1px;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-right: 7px solid var(--color-background-primary);
+      transform: translateY(-50%);
+    }
+  }
+
+  @each $i in (1, 2, 3, 4, 5) {
+    &--elevation#{$i} {
+      & > .Tooltip__body {
+        @include mixins.elevation($i);
+      }
+    }
+  }
+
+}

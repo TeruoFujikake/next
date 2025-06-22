@@ -4,6 +4,7 @@ import UlLiData from '../app/components/UlLiData/UlLiData';
 import LiMore from '../app/components/LiMore/LiMore';
 import Button from '../app/components/Button/Button';
 import UseEffectUseRef from '../app/components/UseEffectUseRef/UseEffectUseRef';
+import TooltipWrapper from '../app/components/TooltipWrapper/TooltipWrapper';
 import { DEVICE } from '../app/components/device';
 import AllCodeView from '../app/components/AllCodeView/AllCodeView';
 
@@ -47,6 +48,7 @@ export default function Home() {
         device={DEVICE.PC}
         name="UseEffectUseRefExample"
       />
+      <TooltipWrapper/>
       <AllCodeView
         fontSize={20}
         text="▼▼▼ここから下はAllCodeViewコンポーネントです▼▼▼"

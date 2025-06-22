@@ -1,0 +1,41 @@
+@use "../../styles/mixins";
+
+.TextEllips {
+  &__body {
+    &Text {
+      &--fontSize14 {
+        @include mixins.font-size(14);
+      }
+
+      &--fontSize18 {
+        @include mixins.font-size(18);
+      }
+
+      &--fontSize20 {
+        @include mixins.font-size(20);
+      }
+    }
+
+    &ExpandTrigger {
+      display: inline-block;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &--fontSize14 {
+        @include mixins.font-size(14);
+      }
+
+      &--fontSize18 {
+        @include mixins.font-size(18);
+      }
+
+      &--fontSize20 {
+        @include mixins.font-size(20);
+      }
+    }
+  }
+}

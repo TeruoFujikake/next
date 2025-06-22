@@ -14,6 +14,24 @@
   );
 }
 
+// @include mixins.text-overflow;
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// @include mixins.line-clamp(2)
+@mixin line-clamp($clamp) {
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+
+  // autoprefixer: off
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+}
+
 // title
 @mixin title-normal {
   @include font-size(20);
@@ -33,5 +51,64 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   } @else if $level == 5 {
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// elevation (box-shadw)
+// @include mixins.elevation(2);
+// @include mixins.elevation(2, "bottom");
+@mixin elevation($floor, $lightPosition: "top") {
+  @if $floor == 1 {
+    @if $lightPosition == "bottom" {
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.02),
+        0 -1px 2px 0 rgba(0, 0, 0, 0.08);
+    } @else {
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.2),
+        0 1px 2px 0 rgba(0, 0, 0, 0.8);
+    } 
+  } @else if $floor == 2 {
+    @if $lightPosition == "bottom" {
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 -2px 3px 0 rgba(0, 0, 0, 0.12);
+    } @else {
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 2px 3px 0 rgba(0, 0, 0, 0.12);
+    }
+  } @else if $floor == 3 {
+    @if $lightPosition == "bottom" {
+      box-shadow:
+        0 0 1px 1px rgba(0, 0, 0, 0.04),
+        0 -4px 6px 0 rgba(0, 0, 0, 0.16);
+    } @else {
+      box-shadow:
+        0 0 1px 1px rgba(0, 0, 0, 0.04),
+        0 4px 6px 0 rgba(0, 0, 0, 0.16);
+    }
+  } @else if $floor == 4 {
+    @if $lightPosition == "bottom" {
+      box-shadow:
+        0 1px 2px 1px rgba(0, 0, 0, 0.04),
+        0 -7px 10px 0 rgba(0, 0, 0, 0.20);
+    } @else {
+      box-shadow:
+        0 1px 2px 1px rgba(0, 0, 0, 0.04),
+        0 7px 10px 0 rgba(0, 0, 0, 0.20);
+    }
+  } @else if $floor == 5 {
+    @if $lightPosition == "bottom" {
+      box-shadow:
+        0 2px 4px 1px rgba(0, 0, 0, 0.03),
+        0 -11px 14px 0 rgba(0, 0, 0, 0.24);
+    } @else {
+      box-shadow:
+        0 2px 4px 1px rgba(0, 0, 0, 0.03),
+        0 11px 14px 0 rgba(0, 0, 0, 0.24);
+    }
+  } @else {
+    box-shadow: none;
   }
 }
