@@ -22,8 +22,8 @@ const TooltipWrapper: React.FC = () => {
 
   return (
     <>
-      <div id={TOOLTIP_ELEMENT_ID} className={classNames}>
-        <p onClick={handleToggle} className={styles.TooltipWrapper__button}>
+      <div className={classNames}>
+        <p id={TOOLTIP_ELEMENT_ID} onClick={handleToggle} className={styles.TooltipWrapper__button}>
           {isVisible ? 'ポップアップ非表示' : 'ポップアップ表示'}
         </p>
 
@@ -35,13 +35,18 @@ const TooltipWrapper: React.FC = () => {
               triggerElementId={TOOLTIP_ELEMENT_ID}
             />
             <Tooltip
+              text="右のポップアップ"
+              tipPosition='left'
+              triggerElementId={TOOLTIP_ELEMENT_ID}
+            />
+            <Tooltip
               text="下のポップアップ"
               tipPosition='top'
               triggerElementId={TOOLTIP_ELEMENT_ID}
             />
             <Tooltip
-              text="下のポップアップ"
-              tipPosition='left'
+              text="左のポップアップ"
+              tipPosition='right'
               triggerElementId={TOOLTIP_ELEMENT_ID}
             />
           </>

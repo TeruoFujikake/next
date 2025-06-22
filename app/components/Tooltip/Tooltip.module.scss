@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 250px;
+    width: 200px;
     padding: 12px;
     pointer-events: auto;
     background-color: var(--color-background-primary);
@@ -48,8 +48,6 @@
   }
 
   &--topTip {
-    transform: translateY(100%);
-
     & > .Tooltip__body {
       &--alignLeft {
         margin: 8px auto 0 16px;
@@ -71,7 +69,8 @@
         top: 1px;
         border-right: 6px solid transparent;
         border-left: 6px solid transparent;
-        border-bottom: 7px solid var(--color-backgroud-primary);
+        border-bottom: 7px solid var(--color-background-primary);
+        transform: translateX(-50%);
       }
     }
   }
@@ -91,16 +90,17 @@
       border-bottom: 7px solid transparent;
       border-left: 8px solid var(--color-border-primary);
       transform: translateY(-50%);
+
+      &::after {
+        top: 50%;
+        right: 1px;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 7px solid var(--color-background-primary);
+        transform: translateY(-50%);
+      }
     }
 
-    &::after {
-      top: 50%;
-      right: 1px;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-left: 7px solid var(--color-background-primary);
-      transform: translateY(-50%);
-    }
   }
 
   &--bottomTip {
@@ -150,16 +150,17 @@
       border-bottom: 7px solid transparent;
       border-right: 8px solid var(--color-border-primary);
       transform: translateY(-50%);
+
+      &::after {
+        top: 50%;
+        left: 1px;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-right: 7px solid var(--color-background-primary);
+        transform: translateY(-50%);
+      }
     }
 
-    &::after {
-      top: 50%;
-      left: 1px;
-      border-top: 6px solid transparent;
-      border-bottom: 6px solid transparent;
-      border-right: 7px solid var(--color-background-primary);
-      transform: translateY(-50%);
-    }
   }
 
   @each $i in (1, 2, 3, 4, 5) {
