@@ -35,10 +35,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   const [isReady, setIsReady] = useState(false);
   const triggerRef = useRef<HTMLElement | null>(null);
 
-  /** 
-   * 自分の位置を取得
-   * 本来は以下のコードでやりたいのだが、レンダリングのタイミングでtriggerElementIdが取得できていない
-   * */
+  /** 自分のIdの位置を取得 */
   useEffect(() => {
     triggerRef.current = document.getElementById(triggerElementId);
 
@@ -61,10 +58,14 @@ const Tooltip: React.FC<TooltipProps> = ({
   /** 外側をclickしたら閉じる */
   // useClickOutside(tooltipRef, onClickHandlerForClosing);
 
-  const inlineStylesForTooltip = tipPosition === 'top' || tipPosition === 'bottom'
-    ? { top: `${bodyY}px` } : tipPosition === 'right'
-      ? { width: `${bodyX}px` } : tipPosition === 'left'
-        ? { left: `${bodyX}px`, width: `calc(100% - ${bodyX}px)`} : undefined;
+  const inlineStylesForTooltip =
+    tipPosition === 'top' || tipPosition === 'bottom'
+      ? { top: `${bodyY}px` }
+      : tipPosition === 'right'
+        ? { width: `${bodyX}px` }
+        : tipPosition === 'left'
+          ? { left: `${bodyX}px`, width: `calc(100% - ${bodyX}px)`}
+          : undefined;
 
   const inlineStylesForTooltipTip = tipPosition === 'top' || tipPosition === 'bottom'
     ? { left: triggerRef.current ? `${tipX}px` : '50%' } : undefined;

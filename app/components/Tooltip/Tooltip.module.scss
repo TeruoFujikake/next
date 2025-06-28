@@ -50,11 +50,11 @@
   &--topTip {
     & > .Tooltip__body {
       &--alignLeft {
-        margin: 8px auto 0 16px;
+        margin: 8px auto 0 170px;
       }
 
       &--alignRight {
-        margin: 8px 16px 0 auto;
+        margin: 8px 170px 0 auto;
       }
     }
 
@@ -108,11 +108,11 @@
 
     &> .Tooltip__body {
       &--alignLeft {
-        margin: 0 auto 8px 16px;
+        margin: 0 auto 8px 170px;
       }
 
       &--alignRight {
-        margin: 0 16px 8px auto;
+        margin: 0 170px 8px auto;
       }
     }
 
