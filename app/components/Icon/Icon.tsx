@@ -4,6 +4,7 @@ import ClassNames from 'classnames';
 import Crown from '../../../assets/icons/crown.svg';
 import Heart from '../../../assets/icons/heart.svg';
 import Star from '../../../assets/icons/star.svg';
+import Close from '../../../assets/icons/close.svg';
 
 import { IconType } from './IconType'; 
 import styles from './Icon.module.scss';
@@ -31,6 +32,7 @@ const Icon: React.FC<IconProps> = (props) => {
     crown: Crown,
     heart: Heart,
     star: Star,
+    close: Close,
   };
 
   const Component = iconMap[type];

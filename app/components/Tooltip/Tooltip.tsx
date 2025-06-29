@@ -99,7 +99,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           aria-label="閉じる"
           data-cl-params={clParams}
         >
-          <Icon type="star" size={16} color="Default" />
+          <Icon type="close" size={16} color="Default" />
         </button>
       </div>
       <div ref={tipArrowRef} style={inlineStylesForTooltipTip} className={styles.Tooltip__arrow} />
