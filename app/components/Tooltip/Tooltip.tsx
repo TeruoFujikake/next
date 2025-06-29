@@ -1,7 +1,7 @@
 import ClassNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 
-// import useClickOutside from '../../../libs/hooks/useClickOutside';
+import useClickOutside from '../../../libs/hooks/useClickOutside';
 import Icon from '../Icon/Icon';
 import styles from './Tooltip.module.scss';
 
@@ -9,7 +9,12 @@ interface TooltipProps {
   /** CustomLoggerのパラメータ */
   clParams?: string;
   elevation?: 0 | 1 | 2 | 3 | 4 | 5;
-  onClickHandlerForClosing?: () => void;
+  /** 
+   * ★★★ () => void は必要 ★★★
+   * ・() => void は「引数なし」「返り値なし」の関数型。何を実行するかは、使う側が自由に定義できます。
+   * ・TypeScriptで型安全にコンポーネントを設計するためには、propsの型（関数であれ、文字列であれ）を明確に指定する必要があります。
+   */
+  onClickHandlerForClosing: () => void; //「引数なし・返り値なし」の関数
   text: string;
   tipPosition: 'top' | 'bottom' | 'left' | 'right';
   /** Tooltipが生える基準となるトリガーのエレメントID */
@@ -56,7 +61,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   }, [triggerElementId]);
 
   /** 外側をclickしたら閉じる */
-  // useClickOutside(tooltipRef, onClickHandlerForClosing);
+  useClickOutside(tooltipRef, onClickHandlerForClosing);
 
   const inlineStylesForTooltip =
     tipPosition === 'top' || tipPosition === 'bottom'

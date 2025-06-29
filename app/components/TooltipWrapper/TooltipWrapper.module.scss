@@ -6,12 +6,12 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 790px; // Default 640px;
   height: 135px;
   background-color: #fff;
 
   &__button {
-    margin: 0;
+    margin-right: 150px; // 0px
     padding: 12px;
     border: 1px solid var(--color-border-primary);
 
