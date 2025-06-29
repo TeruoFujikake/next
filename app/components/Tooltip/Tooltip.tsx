@@ -6,8 +6,6 @@ import Icon from '../Icon/Icon';
 import styles from './Tooltip.module.scss';
 
 interface TooltipProps {
-  /** CustomLoggerのパラメータ */
-  clParams?: string;
   elevation?: 0 | 1 | 2 | 3 | 4 | 5;
   /** 
    * ★★★ () => void は必要 ★★★
@@ -24,7 +22,6 @@ interface TooltipProps {
 const MAXIMUM_CONTENT_WIDTH = 768;
 
 const Tooltip: React.FC<TooltipProps> = ({
-  clParams,
   elevation,
   onClickHandlerForClosing,
   text,
@@ -97,7 +94,6 @@ const Tooltip: React.FC<TooltipProps> = ({
           onClick={onClickHandlerForClosing}
           className={styles.Tooltip__bodyClose}
           aria-label="閉じる"
-          data-cl-params={clParams}
         >
           <Icon type="close" size={16} color="Default" />
         </button>
